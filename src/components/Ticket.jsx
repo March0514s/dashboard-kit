@@ -1,5 +1,6 @@
 import React from "react";
 
+
 import srcImg from "../images/avatar.jpg";
 
 //MUI
@@ -7,6 +8,7 @@ import Chip from "@material-ui/core/Chip";
 import TableCell from "@material-ui/core/TableCell";
 import TableRow from "@material-ui/core/TableRow";
 import Avatar from "@material-ui/core/Avatar";
+import Hidden from "@material-ui/core/Hidden";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 
@@ -60,7 +62,9 @@ function Ticket(props) {
   return (
     <TableRow className={classes.root}>
       <TableCell className={classes.tableCell}>
+        <Hidden xsDown implementation="css">
         <Avatar className={classes.avatar} alt={props.name} src={srcImg} />
+        </Hidden>
         <div className={classes.tableCellData}>
   <Typography variant="body1">{props.subject}</Typography>
   <Typography variant="body1">{props.updated}</Typography>

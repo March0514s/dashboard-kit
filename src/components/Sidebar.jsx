@@ -11,6 +11,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Typography from "@material-ui/core/Typography";
+import Link from "@material-ui/core/Link";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 
@@ -105,6 +106,7 @@ function Sidebar(props) {
     setMobileOpen(!mobileOpen);
   };
 
+  
   const drawer = (
     <div className={classes.drawerContent}>
       <ListItem className={classes.logo}>
@@ -123,10 +125,12 @@ function Sidebar(props) {
           {icon:<PersonOutlineOutlinedIcon />, label:"Agents"}, 
           {icon:<MenuBookOutlinedIcon />, label:"Articles"}].map(
           (x) => (
+            <Link href={x.label === 'Overview' ? '/' : `/${x.label}`}>
             <ListItem button key={x.label} className={classes.listItem}>
                 {x.icon}
                 {x.label}
             </ListItem>
+            </Link>
           )
         )}
       </List>
@@ -134,10 +138,13 @@ function Sidebar(props) {
       <List>
         {[{icon:<SettingsOutlinedIcon />, label:"Settings"}, 
           {icon:<CardMembershipOutlinedIcon />, label:"Subscription"}].map((x) => (
+          <Link to='/tickets'>
           <ListItem button key={x.label} className={classes.listItem}>
             {x.icon}
             {x.label}
           </ListItem>
+          </Link>
+
         ))}
       </List>
     </div>
