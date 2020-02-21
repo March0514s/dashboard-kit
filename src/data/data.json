@@ -1,0 +1,127 @@
+[{
+    "ticketDetails": {
+        "subject": "contact Email not linked",
+        "updated":  "Updated 1 day ago"
+    },
+    "customerName":{
+        "name": "Tom Cruise",
+        "date": "on 24.05.2019"
+    },
+    "Date":{
+        "FormatedData": "May 26, 2019",
+        "time": "6:30 PM"
+    },
+    "Priority": "high"
+},
+
+{
+    "ticketDetails": {
+        "subject": "Adding Images to Featured Posts",
+        "updated":  "Updated 1 day ago"
+    },
+    "customerName":{
+        "name": "Matt Damon",
+        "date": "on 24.05.2019"
+    },
+    "Date":{
+        "FormatedData": "May 26, 2019",
+        "time": "8:00 AM"
+    },
+    "Priority": "low"
+},
+
+{
+    "ticketDetails": {
+        "subject": "When will I be charged this month",
+        "updated":  "Updated 1 day ago"
+    },
+    "customerName":{
+        "name": "Robert Downey",
+        "date": "on 24.05.2019"
+    },
+    "Date":{
+        "FormatedData": "May 26, 2019",
+        "time": "7:30 PM"
+    },
+    "Priority": "high"
+},
+
+{
+    "ticketDetails": {
+        "subject": "Payment not gowing through",
+        "updated":  "Updated 2 days ago"
+    },
+    "customerName":{
+        "name": "Christian Bale",
+        "date": "on 24.05.2019"
+    },
+    "Date":{
+        "FormatedData": "May 25, 2019",
+        "time": "5:00 PM"
+    },
+    "Priority": "normal"
+},
+
+{
+    "ticketDetails": {
+        "subject": "Unable to add replies",
+        "updated":  "Updated 2 days ago"
+    },
+    "customerName":{
+        "name": "Henry Cavil",
+        "date": "on 24.05.2019"
+    },
+    "Date":{
+        "FormatedData": "May 25, 2019",
+        "time": "4:00 PM"
+    },
+    "Priority": "high"
+},
+
+{
+    "ticketDetails": {
+        "subject": "Downtime since last week",
+        "updated":  "Updated 3 days ago"
+    },
+    "customerName":{
+        "name": "Chris Evans",
+        "date": "on 23.05.2019"
+    },
+    "Date":{
+        "FormatedData": "May 25, 2019",
+        "time": "2:00 PM"
+    },
+    "Priority": "normal"
+},
+
+{
+    "ticketDetails": {
+        "subject": "Referral Bonus",
+        "updated":  "Updated 4 days ago"
+    },
+    "customerName":{
+        "name": "Sam Smith",
+        "date": "on 22.05.2019"
+    },
+    "Date":{
+        "FormatedData": "May 25, 2019",
+        "time": "11:30 AM"
+    },
+    "Priority": "low"
+},
+
+{
+    "ticketDetails": {
+        "subject": "How do I change my password?",
+        "updated":  "Updated 6 days ago"
+    },
+    "customerName":{
+        "name": "Steve Rogers",
+        "date": "on 21.05.2019"
+    },
+    "Date":{
+        "FormatedData": "May 24, 2019",
+        "time": "1:00 PM"
+    },
+    "Priority": "normal"
+}]

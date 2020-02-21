@@ -1,19 +1,18 @@
 import React from "react";
 
-import logo from "..\\images\\logo.png";
+import logoSrc from '../images/logo.png';
+import Header from "../containers/Header"
+import Overview from "../containers/Overview"
+import Tickets from "../containers/Tickets"
 
 //MUI
-import AppBar from "@material-ui/core/AppBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import Hidden from "@material-ui/core/Hidden";
-import IconButton from "@material-ui/core/IconButton";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
-import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
@@ -28,11 +27,16 @@ import MenuBookOutlinedIcon from "@material-ui/icons/MenuBookOutlined";
 import SettingsOutlinedIcon from "@material-ui/icons/SettingsOutlined";
 import CardMembershipOutlinedIcon from "@material-ui/icons/CardMembershipOutlined";
 
-const drawerWidth = 305;
+const drawerWidth = "280px";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    display: "flex"
+    display: "flex",
+  },
+  logo: {
+    color:'#7b7d88',
+    fontWeight: 'bold',
+    margin: "21px 0px 35px 15px",
   },
   drawer: {
     [theme.breakpoints.up("sm")]: {
@@ -40,27 +44,58 @@ const useStyles = makeStyles(theme => ({
       flexShrink: 0
     }
   },
-  appBar: {
-    // Remove
-    [theme.breakpoints.up("sm")]: {
-      width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth
-    }
+  divider:{
+    border: "1px solid #3b3c45"
+  },
+  drawerContent: {
+    width: "100%",
+    overflow: "hidden",
+    '& ul div *': {
+      marginLeft: "15px",
+    },
+    '& ul div svg': {
+      marginRight: "25px",
+    },
+    '& ul div:hover ': {
+      borderLeft: "3px solid white",
+      background: "#3e4049",
+      color: "#fff",
+      '& svg': {
+        color: "#fff",
+      }
+    },
+
   },
   menuButton: {
     marginRight: theme.spacing(2),
+    color:'#a6a9ba',
+    background: 'green',
     [theme.breakpoints.up("sm")]: {
       display: "none"
     }
   },
-  toolBar: theme.mixins.toolbar,
+  listButton:{
+    display: "flex",
+
+  },
+  listItem: {
+    color:'#a6a9ba',
+    height: '60px',
+    width: '100%',
+    '& svg': {
+      color:'#a6a9ba',
+    },
+  },
   drawerPaper: {
-    width: drawerWidth
+    width: drawerWidth,
+    background: "#363740",
+    display: "flex",
+    alignItems: "center"
   },
   content: {
+    margin: " 25px 37px 0 37px ",
     flexGrow: 1,
-    padding: theme.spacing(3)
-  }
+  },
 }));
 
 function Sidebar(props) {
@@ -73,63 +108,38 @@ function Sidebar(props) {
     setMobileOpen(!mobileOpen);
   };
 
-  const selectIconTop = i => {
-    switch (i) {
-      case 0:
-        return <DonutLargeOutlinedIcon />;
-      case 1:
-        return <ConfirmationNumberOutlinedIcon />;
-      case 2:
-        return <EmojiObjectsOutlinedIcon />;
-      case 3:
-        return <PeopleAltOutlinedIcon />;
-      case 4:
-        return <PersonOutlineOutlinedIcon />;
-      case 5:
-        return <MenuBookOutlinedIcon />;
-      default:
-        return null;
-    }
-  };
-
-  const selectIconBottom = i => {
-    switch (i) {
-      case 0:
-        return <SettingsOutlinedIcon />;
-      case 1:
-        return <CardMembershipOutlinedIcon />;
-      default:
-        return null;
-    }
-  };
-
   const drawer = (
-    <div>
-      <div className={classes.toolbar} />
-      <ListItem>
-        <ListItemIcon>{<img src={logo} />}</ListItemIcon>
+    <div className={classes.drawerContent}>
+      <ListItem className={classes.logo}>
+        <ListItemIcon>{<img alt="Dashboard Kit" src={logoSrc} />}</ListItemIcon>
         <ListItemText disableTypography>
-          <Typography variant="h6" gutterBottom>
+          <Typography variant="h6">
             Dashboard Kit
           </Typography>
         </ListItemText>
       </ListItem>
       <List>
-        {["Overview", "Tickets", "Ideas", "Contacts", "Agents", "Articles"].map(
-          (text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{selectIconTop(index)}</ListItemIcon>
-              <ListItemText primary={text} />
+        {[{icon:<DonutLargeOutlinedIcon />, label:"Overview"}, 
+          {icon:<ConfirmationNumberOutlinedIcon />, label:"Tickets"}, 
+          {icon:<EmojiObjectsOutlinedIcon />, label:"Ideas"}, 
+          {icon:<PeopleAltOutlinedIcon />, label:"Contacts"}, 
+          {icon:<PersonOutlineOutlinedIcon />, label:"Agents"}, 
+          {icon:<MenuBookOutlinedIcon />, label:"Articles"}].map(
+          (x) => (
+            <ListItem button key={x.label} className={classes.listItem}>
+                {x.icon}
+                {x.label}
             </ListItem>
           )
         )}
       </List>
-      <Divider />
+      <div className={classes.divider}/>
       <List>
-        {["Settings", "Subscription"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{selectIconBottom(index)}</ListItemIcon>
-            <ListItemText primary={text} />
+        {[{icon:<SettingsOutlinedIcon />, label:"Settings"}, 
+          {icon:<CardMembershipOutlinedIcon />, label:"Subscription"}].map((x) => (
+          <ListItem button key={x.label} className={classes.listItem}>
+            {x.icon}
+            {x.label}
           </ListItem>
         ))}
       </List>
@@ -139,7 +149,7 @@ function Sidebar(props) {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <nav className={classes.drawer} aria-label="mailbox folders">
+      <nav className={classes.drawer} aria-label="section buttons">
         <Hidden smUp implementation="css">
           <SwipeableDrawer
             container={container}
@@ -171,7 +181,10 @@ function Sidebar(props) {
         </Hidden>
       </nav>
       <main className={classes.content}>
-        
+            {/* <Header title='Overview'/>
+            <Overview/> */}
+            <Header title="Tickets"/>
+            <Tickets/>
       </main>
     </div>
   );
