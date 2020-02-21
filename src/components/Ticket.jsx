@@ -14,17 +14,11 @@ import Typography from "@material-ui/core/Typography";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 const useStyles = makeStyles(() => ({
-    chipUrgent: {
-      background: "#fec400",
-      color: "#fff"
-    },
-    chipNew: {
-      background: "#29cc97",
-      color: "#fff"
-    },
-    chipDefault: {
-      background: "#f0f1f7",
-      color: "#9fa2b4"
+    root:{
+      '&:hover':{
+        background: '#f7f8ff',
+        cursor: 'pointer'
+      }
     },
     avatar: {
       border: "2px double #e5e6ef",
@@ -64,7 +58,7 @@ function Ticket(props) {
     const classes = useStyles();
 
   return (
-    <TableRow>
+    <TableRow className={classes.root}>
       <TableCell className={classes.tableCell}>
         <Avatar className={classes.avatar} alt={props.name} src={srcImg} />
         <div className={classes.tableCellData}>

@@ -114,6 +114,7 @@ function Tickets(props) {
   const classes = useStyles();
 
   return (
+    <>
     <div className={classes.root}>
       <Grid container>
         <Grid item xs>
@@ -171,6 +172,7 @@ function Tickets(props) {
         </Grid>
       </Grid>
     </div>
+    </>
   );
 }
 

@@ -1,9 +1,6 @@
 import React from "react";
 
 import logoSrc from '../images/logo.png';
-import Header from "../containers/Header"
-import Overview from "../containers/Overview"
-import Tickets from "../containers/Tickets"
 
 //MUI
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -180,12 +177,6 @@ function Sidebar(props) {
           </Drawer>
         </Hidden>
       </nav>
-      <main className={classes.content}>
-            {/* <Header title='Overview'/>
-            <Overview/> */}
-            <Header title="Tickets"/>
-            <Tickets/>
-      </main>
     </div>
   );
 }

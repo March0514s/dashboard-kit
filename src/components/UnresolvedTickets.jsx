@@ -15,7 +15,6 @@ const useStyles = makeStyles(() => ({
     color: '#4c4d57',
     justifyContent: "space-between",
     alignItems: "center",
-    textOverflow: "elipsis"
   },
   card: {
     height: "360px",
@@ -56,7 +55,6 @@ function UnresolvedTickets(props) {
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={3}>
       <Card className={classes.card}>
           <CardContent>
             <div className={classes.headerRow}>
@@ -92,7 +90,6 @@ function UnresolvedTickets(props) {
           <Typography>281</Typography>
           </div>
       </Card>
-      </Grid>
     </div>
   );
 }
