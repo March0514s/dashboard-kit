@@ -1,5 +1,6 @@
 import React from "react";
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
+import chartData from "../data/chartData"
 
 
 import StatusCard from "./StatusCard";
@@ -36,34 +37,11 @@ const useStyles = makeStyles(() => ({
 
 function ChartCard(props) {
   const classes = useStyles();
-  const data = [
-    {name: '0', 'this month': 13, 'last month': 34}, 
-    {name: '1', 'this month': 20, 'last month': 36}, 
-    {name: '2', 'this month': 29, 'last month': 33}, 
-    {name: '3', 'this month': 27, 'last month': 28}, 
-    {name: '4', 'this month': 25, 'last month': 23}, 
-    {name: '5', 'this month': 31, 'last month': 25}, 
-    {name: '6', 'this month': 40, 'last month': 26}, 
-    {name: '7', 'this month': 47, 'last month': 32}, 
-    {name: '8', 'this month': 50, 'last month': 34}, 
-    {name: '9', 'this month': 40, 'last month': 32}, 
-    {name: '10', 'this month': 26, 'last month': 31}, 
-    {name: '11', 'this month': 19, 'last month': 25}, 
-    {name: '12', 'this month': 8, 'last month': 18}, 
-    {name: '13', 'this month': 24, 'last month': 16}, 
-    {name: '14', 'this month': 34, 'last month': 22}, 
-    {name: '15', 'this month': 43, 'last month': 31}, 
-    {name: '16', 'this month': 46, 'last month': 43}, 
-    {name: '17', 'this month': 44, 'last month': 29}, 
-    {name: '18', 'this month': 42, 'last month': 32}, 
-    {name: '19', 'this month': 37, 'last month': 35},
-    
-  ]
 
   const renderLineChart = (
-    <LineChart width={740} height={460} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0}}>
-      <Line type="monotone" dataKey="this month" stroke="#8191ff" />
-      <Line type="monotone" dataKey="last month" stroke="#e3e4ee" />
+    <LineChart width={740} height={460} data={chartData} margin={{ top: 5, right: 20, bottom: 5, left: 0}}>
+      <Line type="monotone" dataKey="Today" stroke="#8191ff" />
+      <Line type="monotone" dataKey="Yesterday" stroke="#e3e4ee" />
       <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
       <XAxis dataKey="name"/>
       <YAxis />
@@ -72,9 +50,9 @@ function ChartCard(props) {
   );
 
   const mobileRenderLineChart = (
-    <LineChart width={280} height={460} data={data} margin={{ top: 5, right: 5, bottom: 5, left: 0}}>
-      <Line type="monotone" dataKey="this month" stroke="#8191ff" />
-      <Line type="monotone" dataKey="last month" stroke="#e3e4ee" />
+    <LineChart width={280} height={460} data={chartData} margin={{ top: 5, right: 5, bottom: 5, left: 0}}>
+      <Line type="monotone" dataKey="Today" stroke="#8191ff" />
+      <Line type="monotone" dataKey="Yesterday" stroke="#e3e4ee" />
       <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
       <XAxis dataKey="name"/>
       <YAxis />
@@ -90,9 +68,6 @@ function ChartCard(props) {
               <div>
                   <Typography variant='h6'>
                       Today's trends<br/><span>as of 25 May 2019, 09:41 PM</span>
-                  </Typography>
-                  <Typography variant='body2'>
-                      
                   </Typography>
               </div>
               <Hidden smUp implementation="css">

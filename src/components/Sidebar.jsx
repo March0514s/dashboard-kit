@@ -138,7 +138,7 @@ function Sidebar(props) {
       <List>
         {[{icon:<SettingsOutlinedIcon />, label:"Settings"}, 
           {icon:<CardMembershipOutlinedIcon />, label:"Subscription"}].map((x) => (
-          <Link to='/tickets'>
+          <Link key={x.label} to='/tickets'>
           <ListItem button key={x.label} className={classes.listItem}>
             {x.icon}
             {x.label}

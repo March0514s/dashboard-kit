@@ -1,24 +1,20 @@
-import React, { useEffect, setState } from "react";
+import React from "react";
 
 import Ticket from '../components/Ticket';
 import data from '../data/data';
 
 // MUI
-import Checkbox from "@material-ui/core/Checkbox";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import Divider from "@material-ui/core/Divider";
 import { makeStyles } from "@material-ui/core/styles";
-import Chip from "@material-ui/core/Chip";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-import Avatar from "@material-ui/core/Avatar";
+import Hidden from "@material-ui/core/Hidden";
 import Grid from "@material-ui/core/Grid";
 
 // Icons
@@ -137,7 +133,9 @@ function Tickets(props) {
                 <TableHead>
                   <TableRow>
                     <TableCell>Ticket details</TableCell>
-                    <TableCell>Customer name</TableCell>
+                    <Hidden xsDown implmentation="css">
+                      <TableCell>Customer name</TableCell>
+                    </Hidden>
                     <TableCell>Date</TableCell>
                     <TableCell>Priority</TableCell>
                     <TableCell></TableCell>
@@ -158,13 +156,11 @@ function Tickets(props) {
                 </TableBody>
               </Table>
             </TableContainer>
-            <Divider />
-            <div className={classes.divider} />
             <div className={classes.lastRow}>
               <Typography variant="body1">
                 Rows per page: <span>8</span>
               </Typography>
-                  <Typography variant="body1">1 - 8 of {data.length}</Typography>
+                  <Typography variant="body1">1 - {data.length} of {data.length}</Typography>
               <ArrowBackIosIcon />
               <ArrowForwardIosIcon />
             </div>

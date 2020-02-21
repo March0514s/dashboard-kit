@@ -2,11 +2,9 @@ import React from "react";
 
 // MUI
 import Card from "@material-ui/core/Card";
-import CardHeader from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
-import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 
 
@@ -83,7 +81,7 @@ function UnresolvedTickets(props) {
           <Typography>Awaiting Developer Fix</Typography>
           <Typography>914</Typography>
           </div>
-          <Divider fullWidth/>
+          <Divider/>
           <div className={classes.divider}/>
           <div className={classes.row}>
           <Typography>Pending</Typography>

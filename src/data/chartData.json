@@ -1,0 +1,23 @@
+[
+    {"name": "0", "Today": 13, "Yesterday": 34}, 
+    {"name": "1", "Today": 20, "Yesterday": 36}, 
+    {"name": "2", "Today": 29, "Yesterday": 33}, 
+    {"name": "3", "Today": 27, "Yesterday": 28}, 
+    {"name": "4", "Today": 25, "Yesterday": 23}, 
+    {"name": "5", "Today": 31, "Yesterday": 25}, 
+    {"name": "6", "Today": 40, "Yesterday": 26}, 
+    {"name": "7", "Today": 47, "Yesterday": 32}, 
+    {"name": "8", "Today": 50, "Yesterday": 34}, 
+    {"name": "9", "Today": 40, "Yesterday": 32}, 
+    {"name": "10", "Today": 26, "Yesterday": 31}, 
+    {"name": "11", "Today": 19, "Yesterday": 25}, 
+    {"name": "12", "Today": 8, "Yesterday": 18}, 
+    {"name": "13", "Today": 24, "Yesterday": 16}, 
+    {"name": "14", "Today": 34, "Yesterday": 22}, 
+    {"name": "15", "Today": 43, "Yesterday": 31}, 
+    {"name": "16", "Today": 46, "Yesterday": 43}, 
+    {"name": "17", "Today": 44, "Yesterday": 29}, 
+    {"name": "18", "Today": 42, "Yesterday": 32}, 
+    {"name": "19", "Today": 37, "Yesterday": 35}
+    
+  ]

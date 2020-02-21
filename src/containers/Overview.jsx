@@ -4,7 +4,6 @@ import TicketCard from "../components/TicketCard";
 import ChartCard from "../components/ChartCard";
 import TasksCard from "../components/TasksCard";
 import UnresolvedTickets from "../components/UnresolvedTickets";
-import Header from "../containers/Header";
 
 // MUI
 import { makeStyles} from "@material-ui/core/styles";
